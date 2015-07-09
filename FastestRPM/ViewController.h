@@ -10,6 +10,13 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)trackFingerVelocity:(UIPanGestureRecognizer *)recognizer;
+
+- (void)rotateSpeedometerNeedle:(CGFloat)speedMagnitude;
+
+- (void)setSpeedometerNeedlebackToZero;
+
+- (void)recursivelyRotateNeedleBack:(float)currentlocation;
 
 @end
 

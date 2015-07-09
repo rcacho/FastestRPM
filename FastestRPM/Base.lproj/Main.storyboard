@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,78 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedometer" translatesAutoresizingMaskIntoConstraints="NO" id="kfh-zA-6fT">
+                                <rect key="frame" x="182" y="28" width="236" height="230"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="speedometerNeedle" translatesAutoresizingMaskIntoConstraints="NO" id="yh0-2U-wDL">
+                                <rect key="frame" x="263" y="123" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0a0-Ee-cO8"/>
+                                    <constraint firstAttribute="height" constant="40" id="2nh-M4-KKj"/>
+                                </constraints>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="264" y="72" width="40" height="40"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z7-P4-OTU">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="279" y="136" width="42" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="8Z7-P4-OTU" firstAttribute="top" secondItem="kfh-zA-6fT" secondAttribute="bottom" constant="8" id="aMO-9a-ovH"/>
+                            <constraint firstAttribute="centerX" secondItem="kfh-zA-6fT" secondAttribute="centerX" id="fLI-ap-5JX"/>
+                            <constraint firstItem="yh0-2U-wDL" firstAttribute="centerY" secondItem="kfh-zA-6fT" secondAttribute="centerY" constant="12" id="ph5-Ey-1e1"/>
+                            <constraint firstAttribute="centerX" secondItem="8Z7-P4-OTU" secondAttribute="centerX" id="tWP-tl-4qj"/>
+                            <constraint firstItem="kfh-zA-6fT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="ucC-lw-5SJ"/>
+                            <constraint firstItem="yh0-2U-wDL" firstAttribute="centerX" secondItem="kfh-zA-6fT" secondAttribute="centerX" constant="-12" id="utQ-W3-at3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8Z7-P4-OTU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="aMO-9a-ovH"/>
+                                <exclude reference="tWP-tl-4qj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="8Z7-P4-OTU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="aMO-9a-ovH"/>
+                                <include reference="tWP-tl-4qj"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="k8x-W3-lAz" appends="YES" id="h1p-Dk-F8P"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="speedMeterLabel" destination="8Z7-P4-OTU" id="54e-oG-hps"/>
+                        <outlet property="speedometerNeedle" destination="yh0-2U-wDL" id="OEd-FJ-UHe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="k8x-W3-lAz">
+                    <connections>
+                        <action selector="trackFingerVelocity:" destination="BYZ-38-t0r" id="zD3-UX-Skz"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="speedometer" width="100" height="100"/>
+        <image name="speedometerNeedle" width="133" height="133"/>
+    </resources>
 </document>
