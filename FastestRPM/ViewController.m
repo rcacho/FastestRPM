@@ -14,7 +14,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *speedMeterLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
+
 @property float currentNeedleAngle;
+
+@property float highScore;
 
 @end
 
@@ -38,6 +42,11 @@
         // calculate the magnitude ot the get the speed..
         CGFloat magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));
         self.speedMeterLabel.text = [NSString stringWithFormat:@"%f",magnitude];
+        if (magnitude > self.highScore) {
+            self.highScore = magnitude;
+            self.highScoreLabel.text = [NSString stringWithFormat:@"%f",self.highScore];
+        }
+        
         NSLog(@"%f", magnitude);
         [self setSpeedometerNeedlebackToZero];
     } else if (recognizer.state == UIGestureRecognizerStateChanged){

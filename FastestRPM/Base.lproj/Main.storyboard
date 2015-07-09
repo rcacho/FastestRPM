@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="height" constant="40" id="2nh-M4-KKj"/>
                                 </constraints>
                                 <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="264" y="72" width="40" height="40"/>
+                                    <rect key="frame" x="279" y="58" width="40" height="40"/>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z7-P4-OTU">
@@ -38,33 +38,50 @@
                                     <rect key="frame" x="279" y="136" width="42" height="21"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJ0-DK-sw9">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="279" y="739" width="42" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8Z7-P4-OTU" firstAttribute="top" secondItem="kfh-zA-6fT" secondAttribute="bottom" constant="8" id="aMO-9a-ovH"/>
                             <constraint firstAttribute="centerX" secondItem="kfh-zA-6fT" secondAttribute="centerX" id="fLI-ap-5JX"/>
-                            <constraint firstItem="yh0-2U-wDL" firstAttribute="centerY" secondItem="kfh-zA-6fT" secondAttribute="centerY" constant="12" id="ph5-Ey-1e1"/>
+                            <constraint firstAttribute="centerX" secondItem="CJ0-DK-sw9" secondAttribute="centerX" id="ibF-g3-fY3"/>
+                            <constraint firstItem="yh0-2U-wDL" firstAttribute="centerY" secondItem="kfh-zA-6fT" secondAttribute="centerY" constant="3" id="ph5-Ey-1e1"/>
                             <constraint firstAttribute="centerX" secondItem="8Z7-P4-OTU" secondAttribute="centerX" id="tWP-tl-4qj"/>
                             <constraint firstItem="kfh-zA-6fT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="ucC-lw-5SJ"/>
-                            <constraint firstItem="yh0-2U-wDL" firstAttribute="centerX" secondItem="kfh-zA-6fT" secondAttribute="centerX" constant="-12" id="utQ-W3-at3"/>
+                            <constraint firstItem="yh0-2U-wDL" firstAttribute="centerX" secondItem="kfh-zA-6fT" secondAttribute="centerX" id="utQ-W3-at3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CJ0-DK-sw9" secondAttribute="bottom" constant="40" id="vsB-dv-5BY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="8Z7-P4-OTU"/>
+                                <exclude reference="CJ0-DK-sw9"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="aMO-9a-ovH"/>
                                 <exclude reference="tWP-tl-4qj"/>
+                                <exclude reference="ibF-g3-fY3"/>
+                                <exclude reference="vsB-dv-5BY"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
                                 <include reference="8Z7-P4-OTU"/>
+                                <include reference="CJ0-DK-sw9"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="aMO-9a-ovH"/>
                                 <include reference="tWP-tl-4qj"/>
+                                <include reference="ibF-g3-fY3"/>
+                                <include reference="vsB-dv-5BY"/>
                             </mask>
                         </variation>
                         <connections>
@@ -72,6 +89,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="highScoreLabel" destination="CJ0-DK-sw9" id="fL0-RJ-AeF"/>
                         <outlet property="speedMeterLabel" destination="8Z7-P4-OTU" id="54e-oG-hps"/>
                         <outlet property="speedometerNeedle" destination="yh0-2U-wDL" id="OEd-FJ-UHe"/>
                     </connections>
